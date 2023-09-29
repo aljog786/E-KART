@@ -5,7 +5,7 @@ const orderSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "userModal",
+      ref: "userModel",
     },
     orderItems: [
       {
@@ -28,7 +28,7 @@ const orderSchema = new mongoose.Schema(
         product: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,
-          ref: "productModal",
+          ref: "productModel",
         },
       },
     ],
@@ -112,5 +112,5 @@ const orderSchema = new mongoose.Schema(
   }
 );
 
-const orderModal = mongoose.model("orderModal", "orderSchema");
-export default orderModal;
+const orderModel = mongoose.model("orderModel", orderSchema);
+export default orderModel;

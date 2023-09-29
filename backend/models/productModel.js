@@ -5,7 +5,7 @@ const reviewSchema = mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "User",
+      ref: "userModel",
     },
     name: {
       type: String,
@@ -30,7 +30,7 @@ const productSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "userModal",
+      ref: "userModel",
     },
     name: {
       type: String,
@@ -78,5 +78,5 @@ const productSchema = new mongoose.Schema(
     timestamps: true
   }
 );
-const productModal = mongoose.model("productModal", "productSchema");
-export default productModal;
+const productModel = mongoose.model("productModel", productSchema);
+export default productModel;
